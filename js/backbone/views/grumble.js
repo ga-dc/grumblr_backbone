@@ -24,6 +24,8 @@ App.Views.Grumble = Backbone.View.extend({
       event.preventDefault();
     }
     this.$el.html(this.template(this.model.toJSON()));
+
+    this.model.comments.fetch(); // The magic to get all comments of this grumble
   },
 
   renderEditForm: function(){
@@ -50,7 +52,7 @@ App.Views.Grumble = Backbone.View.extend({
   renderComment: function(comment) {
     console.log("render comment method is trying")
     var commentView = new App.Views.Comment({model: comment});
-    this.$el.find(".comments").append(commentView.$el);
+    this.$el.find(".comments").append(commentView.$el); // Append to the comments div in the index
   }
 
 });
