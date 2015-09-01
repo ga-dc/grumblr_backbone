@@ -1,4 +1,4 @@
-GrumbleCreateView = Backbone.View.extend({
+App.Views.GrumbleCreate = Backbone.View.extend({
   el: '#newGrumble',
 
   events: {
