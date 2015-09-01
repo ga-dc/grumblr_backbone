@@ -1,4 +1,4 @@
-GrumbleListView = Backbone.View.extend({
+App.Views.GrumbleList = Backbone.View.extend({
   el: '#grumbles',
 
   initialize: function() {
@@ -11,8 +11,8 @@ GrumbleListView = Backbone.View.extend({
     this.collection.each(this.renderOne.bind(this));
   },
 
-  renderOne: function(grumble) {
-    var view = new GrumbleView({ model: grumble });
-    this.$el.append(view.$el);
+  renderOne: function( grumble ) {
+    var view = new App.Views.Grumble({ model: grumble });
+    this.$el.prepend(view.$el);
   }
 });
