@@ -1,4 +1,4 @@
-GrumbleListView = Backbone.View.extend({
+App.Views.GrumbleList = Backbone.View.extend({
   el: '#grumbles',
 
   initialize: function() {
