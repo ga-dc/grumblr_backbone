@@ -42,15 +42,15 @@
 
   <!-- Comments Form -->
 
-    <form class="commentForm">
-      <label>Author Name:</label>
-      <input type="text" name="authorName">
-      <label>Content:</label>
-      <input type="text" name="content">
-      <button>Submit</button>
-    </form>
+  <form class="commentForm">
+    <label>Author Name:</label>
+    <input type="text" name="authorName">
+    <label>Content:</label>
+    <input type="text" name="content">
+    <button class="submit-comment">Submit</button>
+  </form>
 
-    <div class="comments"></div>   <!-- Space to append comments -->
+  <div class="comments"></div>   <!-- Space to append comments -->
 
   <!-- End Comments Form -->
 
@@ -58,9 +58,19 @@
 
   <!-- Space to create Comments Template -->
   <script id="commentTemplate" type="text/x-handlebars-template">
-      by: {{authorName}} <span class="delete">(X)</span>
+      by: {{authorName}} <span class="delete-comment">(x)</span>
       <p> {{content}} </p>
       <button class="edit-comment">Edit Comment</button>
+  </script>
+
+  <script id="createCommentTemplate" type="text/x-handlebars-template">
+    <form class="commentForm">
+      <label>Author Name:</label>
+      <input type="text" name="authorName" value="{{authorName}}">
+      <label>Content:</label>
+      <input type="text" name="content" value="{{content}}">
+      <button class="submit-comment">Submit</button>
+    </form>
   </script>
 
   <script id="grumbleFormTemplate" type="text/x-handlebars-template">

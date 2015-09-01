@@ -7,6 +7,8 @@ App.Views.Grumble = Backbone.View.extend({
     'click .cancel': 'render',
     'click .submit': 'updateGrumble',
     'click .delete': 'deleteGrumble',
+
+    'click .submit-comment': 'createComment', // Setup event click for comment form
   },
 
   initialize: function() {
@@ -53,6 +55,19 @@ App.Views.Grumble = Backbone.View.extend({
     console.log("render comment method is trying")
     var commentView = new App.Views.Comment({model: comment});
     this.$el.find(".comments").append(commentView.$el); // Append to the comments div in the index
-  }
+  },
+
+  createComment: function(){
+    event.preventDefault();
+
+    var data = {
+      authorName: this.$("[name='authorName']").val(),
+      content: this.$("[name='content']").val(),
+    }
+
+    this.model.comments.create(data); // The magic to get the comment to post to the specific grumble
+
+    console.log("create comment click working")
+    }
 
 });
