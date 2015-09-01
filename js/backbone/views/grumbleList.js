@@ -11,7 +11,7 @@ App.Views.GrumbleList = Backbone.View.extend({
     this.collection.each(this.renderOne.bind(this));
   },
 
-  renderOne: function(grumble) {
+  renderOne: function( grumble ) {
     var view = new App.Views.Grumble({ model: grumble });
     this.$el.prepend(view.$el);
   }

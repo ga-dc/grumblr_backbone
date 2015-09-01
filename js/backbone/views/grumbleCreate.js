@@ -26,7 +26,7 @@ App.Views.GrumbleCreate = Backbone.View.extend({
       authorName: this.$("[name='authorName']").val(),
       content: this.$("[name='content']").val(),
       photoUrl: this.$("[name='photoUrl']").val()
-    }
+    };
     this.collection.create(data);
 
     this.$el.find("input, textarea").val("");
