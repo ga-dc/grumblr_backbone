@@ -15,8 +15,17 @@ App.Views.GrumbleCreate = Backbone.View.extend({
   },
 
   toggleForm: function(){
+    this.toggleButton(this.$(".new").text());
     event.preventDefault();
     this.$(".formContainer").slideToggle();
+  },
+
+  toggleButton: function(state){
+    if(state === "New Grumble"){
+      this.$(".new").text("Hide Form")
+    }else{
+      this.$(".new").text("New Grumble")
+    }
   },
 
   createGrumble: function(){
