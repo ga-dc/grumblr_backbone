@@ -13,13 +13,12 @@ App.Views.Grumble = Backbone.View.extend({
   initialize: function() {
     var self = this;
     this.listenTo(this.model, 'change', this.render);
-    
+
     this.listenTo(this.model.comments, 'add', this.renderComment);
 
     this.template = Handlebars.compile($("#grumbleTemplate").html());
     this.editTemplate = Handlebars.compile($("#grumbleFormTemplate").html());
     this.commentTemplate = Handlebars.compile($("#commentTemplate").html())
-    // this.commentForm = Handlebars.compile($('#grumbleTemplate.commentForm').html())
     this.model.comments.fetch().done(function(){
       self.render();
     })
