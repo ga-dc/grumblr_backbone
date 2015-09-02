@@ -4,7 +4,8 @@ App.Views.GrumbleCreate = Backbone.View.extend({
   events: {
     'click .new':    'toggleForm',
     'click .cancel': 'toggleForm',
-    'click .submit': 'createGrumble'
+    'click .submit': 'createGrumble',
+    'click .commentForm button': 'createComment'
   },
 
   initialize: function(){
@@ -33,5 +34,17 @@ App.Views.GrumbleCreate = Backbone.View.extend({
     this.toggleForm();
   },
 
+  renderComment: function(comment) {
+    var commentView = new App.Views.Comment({model: comment});
+    this.$el.find(".comments").append(commentView.$el);
+  },
 
+  createComment: function(){
+    event.preventDefault();
+    var data = {
+      authorName: this.$("[name='authorName']").val(),
+      content: this.$("[name='content']").val()
+    }
+    this.model.comments.create(data);
+  }
 });
