@@ -1,9 +1,10 @@
-GrumbleCreateView = Backbone.View.extend({
-  el: '#newGrumble',
+App.Views.GrumbleCreate = Backbone.View.extend({
+  el: "#createGrumble",
 
   events: {
-    'click .toggle-form': 'toggleForm',
-    'click .create': 'createGrumble'
+    "click .new": "renderNewForm",
+    "click .cancel": "renderNewForm",
+    "click .create": "createGrumble"
   },
 
   initialize: function(){
@@ -12,14 +13,24 @@ GrumbleCreateView = Backbone.View.extend({
     this.$(".formContainer").hide();
   },
 
-  toggleForm: function(){
-    if(this.$('.toggle-form').text() === "New Grumble") {
-      this.$('.toggle-form').text("Hide Form");
-    } else {
-      this.$('.toggle-form').text("New Grumble");
-
-    }
+  renderNewForm: function(){
+    console.log("Button clicked.")
     this.$(".formContainer").slideToggle();
-  }
+    // this.$el.html(this.template({}))
+  },
 
+  createGrumble: function(){
+    event.preventDefault();
+
+    var data = {
+      title: this.$("[name='title']").val(),
+      authorName: this.$("[name='authorName']").val(),
+      content: this.$("[name='content']").val(),
+      photoUrl: this.$("[name='photoUrl']").val()
+    }
+
+    this.collection.create(data);
+    this.$el.find("input, textarea").val("");
+    this.toggleForm();
+  }
 });
