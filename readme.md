@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Grumblr Backbone
 
 ## Part One
@@ -14,7 +14,7 @@ we'd like you to set up both models and collections for comments on a grumble.
     - `var comment = new App.Models.Comment({authorName: "bob", content: "learned backbone today!!"})`
 2. Define a comments collection using `Backbone.Collection.extend`
   - You know it worked if:
-    - You can instantiate a comments collection 
+    - You can instantiate a comments collection
     - `var comments = new App.Collections.Comments([comment1, comment2, comment3])`
 3. Associate comments with models
 
@@ -37,7 +37,7 @@ App.Models.Grumble = Backbone.Model.extend({
 Try CRUD'ing a few comments using the developer console and the public grumblr api: http://grumblr.wdidc.org/grumbles
 
 ---
-=======
+
 # Grumblr Backbone - HW#2 - Views
 
 ## Goal
@@ -94,4 +94,3 @@ Implement sorting for grumbles in the collection view (by title, authorName, etc
 ## Update / Delete Comments
 
 Implement edit / update / destroy for comments.
->>>>>>> 2743c6abeaf6100214b6b68082be0e4a8fd3da30
