@@ -1,3 +1,3 @@
-App.Models.Grumble = Backbone.Model.extend({
+App.Models.Comment = Backbone.Model.extend({
   urlRoot: 'http://localhost:3000/index'
 });
