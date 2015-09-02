@@ -14,7 +14,7 @@ App.Views.GrumbleCreate = Backbone.View.extend({
     this.$(".formContainer").hide();
   },
 
-  toggleForm: function(){
+  toggleForm: function(event){
     event.preventDefault();
     this.$(".formContainer").slideToggle();
   },
@@ -31,7 +31,7 @@ App.Views.GrumbleCreate = Backbone.View.extend({
 
     this.$el.find("input, textarea").val("");
     this.toggleForm();
-  },
+  }
 
 
 });

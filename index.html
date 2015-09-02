@@ -12,6 +12,7 @@
   <script src="js/backbone/views/grumble.js"></script>
   <script src="js/backbone/views/grumbleList.js"></script>
   <script src="js/backbone/views/grumbleCreate.js"></script>
+  <script src="js/backbone/views/comment.js"></script>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -52,6 +53,12 @@
       <button class="submit">Submit</button>
       <button class="cancel">Cancel</button>
     </form>
+  </script>
+
+  <script id="commentTemplate" type="text/x-handlebars-template">
+    <p><b>by: {{ authorName }}</b></p>
+    <p>{{ content }}</p>
+    <button class="deleteComment">Delete</button>
   </script>
 
 </body>
