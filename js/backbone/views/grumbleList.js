@@ -1,4 +1,4 @@
-GrumbleListView = Backbone.View.extend({
+App.Views.GrumbleList = Backbone.View.extend({
   el: '#grumbles',
 
   initialize: function() {
@@ -12,7 +12,7 @@ GrumbleListView = Backbone.View.extend({
   },
 
   renderOne: function(grumble) {
-    var view = new GrumbleView({ model: grumble });
+    var view = new App.Views.Grumble({ model: grumble });
     this.$el.append(view.$el);
   }
 });

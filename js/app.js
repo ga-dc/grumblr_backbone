@@ -1,8 +1,16 @@
+App = {
+  Models: {},
+  Collections: {},
+  Views: {},
+  Routers: {}
+}
+
 $(document).ready(function() {
-  grumbles = new GrumblesCollection();
+  console.log("jq is working!");
+  grumbles = new App.Collections.Grumbles();
   grumbles.fetch({reset: true});
 
-  listView = new GrumbleListView({collection: grumbles});
-  grumbleCreateView = new GrumbleCreateView({collection: grumbles})
+  // listView = new App.Views.GrumbleList({collection: grumbles});
+  // grumbleCreateView = new App.Views.GrumbleCreate({collection: grumbles})
 
 });
