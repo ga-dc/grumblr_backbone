@@ -21,6 +21,7 @@ App.Views.Grumble = Backbone.View.extend({
   },
 
   render: function() {
+    App.Routers.grumble.navigate('_')
     if(event){
       event.preventDefault();
     }
@@ -29,6 +30,7 @@ App.Views.Grumble = Backbone.View.extend({
   },
 
   renderEditForm: function(){
+    App.Routers.grumble.navigate('grumbles/' + this.model.id + '/edit')
     this.$el.html(this.editTemplate(this.model.toJSON()))
   },
 

@@ -1,5 +1,6 @@
 App.Routers.Grumble = Backbone.Router.extend({
   routes: {
+    '_' : 'index',
     '' : 'index',
     'grumbles/new' : 'newGrumble',
     'grumbles/:id/edit' : 'editGrumble'
@@ -15,5 +16,11 @@ App.Routers.Grumble = Backbone.Router.extend({
   },
   index: function(){
     App.Collections.grumbles.fetch()
+  },
+  editGrumble: function(id){
+    App.Collections.grumbles.fetch().then(function() {
+      view = App.Views.grumbleList.findView(id);
+      view.renderEditForm();
+    });
   }
 })

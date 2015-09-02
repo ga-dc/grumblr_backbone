@@ -17,5 +17,14 @@ App.Views.GrumbleList = Backbone.View.extend({
     var view = new App.Views.Grumble({ model: grumble });
     this.views.push(view);
     this.$el.prepend(view.$el);
+  },
+  findView: function(id){
+    console.log(this.views)
+    for(var i = 0; i < this.views.length; i++){
+      if(this.views[i].model.get("id") == id){
+        view = this.views[i]
+      }
+    }
+    return view
   }
 });
