@@ -1,3 +1,10 @@
+App = {
+  Models: {},
+  Views: {},
+  Collections: {},
+  Routers: {}
+};
+
 $(document).ready(function() {
   grumbles = new GrumblesCollection();
   grumbles.fetch({reset: true});
