@@ -12,12 +12,13 @@
   <script src="js/backbone/views/grumble.js"></script>
   <script src="js/backbone/views/grumbleList.js"></script>
   <script src="js/backbone/views/grumbleCreate.js"></script>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <h1>Grumblr</h1>
 
-  <div id="newGrumble">
-    <button class="toggle-form">New Grumble</button>
+  <div id="createGrumble">
+    <button class="new">New Grumble</button>
     <div class="formContainer"></div>
   </div>
 
@@ -25,25 +26,33 @@
   </div>
 
   <script id="grumbleTemplate" type="text/x-handlebars-template">
-    <div class="grumble">
-      <h2>{{ title }}</h2>
-      by: {{ authorName }}
-      <p>
-        {{ content }}
-      </p>
-      <img src="{{ photoUrl }}" alt="">
-    </div>
+    <h2>{{ title }} <span class='delete'>(X)</span></h2>
+    by: {{ authorName }}
+    <p>
+      {{ content }}
+    </p>
+    <img src="{{ photoUrl }}" alt="">
+    <button class="edit">Edit Grumble</button>
+    <form class="commentForm">
+      <label>Author Name:</label>
+      <input type="text" name="authorName">
+      <label>Content:</label>
+      <input type="text" name="content">
+      <button>Submit</button>
+    </form>
   </script>
 
   <script id="grumbleFormTemplate" type="text/x-handlebars-template">
     <form class="grumbleForm">
       <input type="text" name="title" value="{{ title }}">
       by: <input type="text" name="authorName" value="{{ authorName }}">
-      <textarea name="content" value="{{ content }}"></textarea>
+      <textarea name="content">{{ content }}</textarea>
       <img src="{{ photoUrl }}" alt="">
       <input type="text" name="photoUrl" value="{{ photoUrl }}">
-      <button class="create">Create</button>
+      <button class="submit">Submit</button>
+      <button class="cancel">Cancel</button>
     </form>
   </script>
+
 </body>
 </html>
