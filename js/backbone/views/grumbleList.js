@@ -12,7 +12,7 @@ App.Views.GrumbleList = Backbone.View.extend({
   },
 
   renderOne: function(grumble) {
-    var view = new GrumbleView({ model: grumble });
+    var view = new App.Views.Grumble({ model: grumble });
     this.$el.append(view.$el);
   }
 });
