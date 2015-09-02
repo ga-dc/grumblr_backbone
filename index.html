@@ -33,13 +33,14 @@
     </p>
     <img src="{{ photoUrl }}" alt="">
     <button class="edit">Edit Grumble</button>
-    <form class="commentForm">
+    <form class="commentTemplate">
       <label>Author Name:</label>
       <input type="text" name="authorName">
       <label>Content:</label>
       <input type="text" name="content">
       <button>Submit</button>
     </form>
+    <div class="comments"></div>
   </script>
 
   <script id="grumbleFormTemplate" type="text/x-handlebars-template">
@@ -53,6 +54,13 @@
       <button class="cancel">Cancel</button>
     </form>
   </script>
+
+  <!-- <script id="commentTemplate" type="text/x-handlebars-template">
+    <p>{{ content }}</p>
+    <p><small>by {{ authorName }} <a class="deleteComment text-warning">(Delete)</a></small></p>
+    <hr />
+    <div class="comments"></div>
+  </script> -->
 
 </body>
 </html>
