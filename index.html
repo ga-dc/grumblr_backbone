@@ -38,8 +38,15 @@
       <input type="text" name="authorName">
       <label>Content:</label>
       <input type="text" name="content">
-      <button>Submit</button>
+      <button class="submitComment">Submit</button>
     </form>
+    <div class="comments"></div>
+  </script>
+
+  <script id="commentTemplate" type="text/x-handlebars-template">
+      <div>{{ content }}</div>
+      <div>by: {{ authorName }}</div>
+      <button class="deleteComment">Delete Comment</button>
   </script>
 
   <script id="grumbleFormTemplate" type="text/x-handlebars-template">

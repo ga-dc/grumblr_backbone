@@ -7,6 +7,7 @@ App.Views.Grumble = Backbone.View.extend({
     'click .cancel': 'render',
     'click .submit': 'updateGrumble',
     'click .delete': 'deleteGrumble',
+    "click .submitComment": "createComment"
   },
 
   initialize: function() {
@@ -44,6 +45,20 @@ App.Views.Grumble = Backbone.View.extend({
   deleteGrumble: function(){
     this.model.destroy();
     this.$el.fadeOut();
+  },
+
+  renderComment: function(comment) {
+    var commentView = new App.Views.Comment({model: comment});
+    this.$el.find(".comments").append(commentView.$el);
+  },
+
+  createComment: function(){
+    event.preventDefault();
+    var data = {
+      authorName: this.$("[name='authorName']").val(),
+      content: this.$("[name='content']").val()
+    }
+    this.model.comments.create(data);
   }
 
 });
