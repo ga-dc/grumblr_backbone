@@ -24,16 +24,16 @@ App.Views.GrumbleCreate = Backbone.View.extend({
 
   toggleButton: function(state){
     if(state === "New Grumble"){
-      this.$(".new").text("Hide Form")
+      this.$(".new").text("Hide Form");
     }else{
-      this.$(".new").text("New Grumble")
+      this.$(".new").text("New Grumble");
     }
   },
   toggleUrlState: function(state){
     if(state === "New Grumble"){
-      App.Routers.grumble.navigate('')
+      App.Routers.grumble.navigate('');
     }else{
-      App.Routers.grumble.navigate('grumbles/new')
+      App.Routers.grumble.navigate('grumbles/new');
     }
   },
 
@@ -44,12 +44,11 @@ App.Views.GrumbleCreate = Backbone.View.extend({
       authorName: this.$("[name='authorName']").val(),
       content: this.$("[name='content']").val(),
       photoUrl: this.$("[name='photoUrl']").val()
-    }
+    };
     this.collection.create(data);
 
     this.$el.find("input, textarea").val("");
     this.toggleForm();
   },
-
 
 });

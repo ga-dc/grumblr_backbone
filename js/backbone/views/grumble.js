@@ -15,13 +15,13 @@ App.Views.Grumble = Backbone.View.extend({
     this.listenTo(this.model.comments, 'add', this.renderComment);
 
     this.template = Handlebars.compile($("#grumbleTemplate").html());
-    this.editTemplate = Handlebars.compile($("#grumbleFormTemplate").html())
+    this.editTemplate = Handlebars.compile($("#grumbleFormTemplate").html());
 
     this.render();
   },
 
   render: function() {
-    App.Routers.grumble.navigate('_')
+    App.Routers.grumble.navigate('_');
     if(event){
       event.preventDefault();
     }
@@ -30,8 +30,8 @@ App.Views.Grumble = Backbone.View.extend({
   },
 
   renderEditForm: function(){
-    App.Routers.grumble.navigate('grumbles/' + this.model.id + '/edit')
-    this.$el.html(this.editTemplate(this.model.toJSON()))
+    App.Routers.grumble.navigate('grumbles/' + this.model.id + '/edit');
+    this.$el.html(this.editTemplate(this.model.toJSON()));
   },
 
   updateGrumble: function() {
@@ -41,7 +41,7 @@ App.Views.Grumble = Backbone.View.extend({
       authorName: this.$("[name='authorName']").val(),
       content: this.$("[name='content']").val(),
       photoUrl: this.$("[name='photoUrl']").val()
-    }
+    };
     this.model.save(data);
   },
 
@@ -60,7 +60,7 @@ App.Views.Grumble = Backbone.View.extend({
     var data = {
       authorName: this.$("[name='authorName']").val(),
       content: this.$("[name='content']").val()
-    }
+    };
     this.model.comments.create(data);
   }
 });

@@ -11,11 +11,11 @@ App.Routers.Grumble = Backbone.Router.extend({
     App.Views.grumbleCreate = new App.Views.GrumbleCreate({collection: App.Collections.grumbles});
   },
   newGrumble: function(){
-    App.Collections.grumbles.fetch()
+    App.Collections.grumbles.fetch();
     App.Views.grumbleCreate.toggleForm();
   },
   index: function(){
-    App.Collections.grumbles.fetch()
+    App.Collections.grumbles.fetch();
   },
   editGrumble: function(id){
     App.Collections.grumbles.fetch().then(function() {
@@ -23,4 +23,4 @@ App.Routers.Grumble = Backbone.Router.extend({
       view.renderEditForm();
     });
   }
-})
+});
