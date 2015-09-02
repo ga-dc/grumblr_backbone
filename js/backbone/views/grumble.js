@@ -46,6 +46,11 @@ App.Views.Grumble = Backbone.View.extend({
   deleteGrumble: function(){
     this.model.destroy();
     this.$el.fadeOut();
+  },
+
+  renderComment: function(comment) {
+    var commentView = new App.Views.Comment({model: comment});
+    this.$el.find(".comments").append(commentView.$el);
   }
 
 });
