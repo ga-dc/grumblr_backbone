@@ -9,14 +9,17 @@ App.Views.Grumble = Backbone.View.extend({
     'click .delete': 'deleteGrumble',
 
     'click .submit-comment': 'createComment', // Setup event click for comment form
+
   },
 
   initialize: function() {
     this.listenTo(this.model, 'change', this.render);
-    this.listenTo(this.model.comments, 'add', this.renderComment); // Render comments
+    this.listenTo(this.model.comments, 'add', this.renderComment); // Listen to the comments collection and anytime a comment is added, render the comment
 
     this.template = Handlebars.compile($("#grumbleTemplate").html());
     this.editTemplate = Handlebars.compile($("#grumbleFormTemplate").html());
+
+    this.createCommentTemplate = Handlebars.compile($('#commentTemplate').html());
 
     this.render();
   },
@@ -57,7 +60,7 @@ App.Views.Grumble = Backbone.View.extend({
     this.$el.find(".comments").append(commentView.$el); // Append to the comments div in the index
   },
 
-  createComment: function(){
+  createComment: function(){ // The comment will go into a grumble so it needs to be created on this view
     event.preventDefault();
 
     var data = {
@@ -68,6 +71,6 @@ App.Views.Grumble = Backbone.View.extend({
     this.model.comments.create(data); // The magic to get the comment to post to the specific grumble
 
     console.log("create comment click working")
-    }
+  },
 
 });
