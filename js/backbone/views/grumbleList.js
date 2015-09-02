@@ -1,9 +1,9 @@
 App.Views.GrumbleList = Backbone.View.extend({
-  el: '#grumbles',
+  el: "#grumbles",
 
   initialize: function() {
-    this.listenTo(this.collection, 'reset', this.renderAll);
-    this.listenTo(this.collection, 'add', this.renderOne);
+    this.listenTo(this.collection, "reset", this.renderAll);
+    this.listenTo(this.collection, "add", this.renderOne);
   },
 
   renderAll: function(){

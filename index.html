@@ -40,7 +40,7 @@
         <input type="text" name="authorName">
         <label>Content:</label>
         <input type="text" name="content">
-        <button>Submit</button>
+        <button class="commentSubmit">Submit</button>
       </form>
       <div class="comments"></div>
     </div>
@@ -59,10 +59,9 @@
   </script>
 
   <script id="commentTemplate" type="text/x-handlebars-template">
-      <span>by: {{ authorName }}</span>
-      <div>{{ content }}</div>
-      <button class="deleteComment">Delete</button>
+    <span>by: {{ authorName }}</span>
+    <div>{{ content }}</div>
+    <button class="deleteComment">Delete</button>
   </script>
-
 </body>
 </html>
