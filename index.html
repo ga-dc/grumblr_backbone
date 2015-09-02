@@ -12,6 +12,7 @@
   <script src="js/backbone/views/grumble.js"></script>
   <script src="js/backbone/views/grumbleList.js"></script>
   <script src="js/backbone/views/grumbleCreate.js"></script>
+  <script src="js/backbone/views/comment.js"></script>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -25,6 +26,8 @@
   <div id="grumbles">
   </div>
 
+</body>
+
   <script id="grumbleTemplate" type="text/x-handlebars-template">
     <h2>{{ title }} <span class='delete'>(X)</span></h2>
     by: {{ authorName }}
@@ -33,12 +36,13 @@
     </p>
     <img src="{{ photoUrl }}" alt="">
     <button class="edit">Edit Grumble</button>
+    <div class ="comments"></div>
     <form class="commentForm">
       <label>Author Name:</label>
       <input type="text" name="authorName">
       <label>Content:</label>
       <input type="text" name="content">
-      <button>Submit</button>
+      <button class ="commentSubmit">Submit</button>
     </form>
   </script>
 
@@ -54,5 +58,9 @@
     </form>
   </script>
 
-</body>
+  <script id="commentTemplate" type="text/x-handlebars-template">
+    <h3>{{authorName}}</h3>
+    <p>{{content}}</p>
+    <button class = "deleteComment">Delete Comment</button>
+  </script>
 </html>
