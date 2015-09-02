@@ -4,7 +4,8 @@ App.Views.GrumbleCreate = Backbone.View.extend({
   events: {
     'click .new':    'toggleForm',
     'click .cancel': 'toggleForm',
-    'click .submit': 'createGrumble'
+    'click .submit': 'createGrumble',
+
   },
 
   initialize: function(){
@@ -31,7 +32,7 @@ App.Views.GrumbleCreate = Backbone.View.extend({
 
     this.$el.find("input, textarea").val("");
     this.toggleForm();
-  },
+  }
 
 
 });
