@@ -3,6 +3,6 @@ $(document).ready(function() {
   grumbles.fetch({reset: true});
 
   listView = new GrumbleListView({collection: grumbles});
-  grumbleCreateView = new GrumbleCreateView({collection: grumbles})
+  grumbleCreateView = new GrumbleCreateView({collection: grumbles});
 
 });
