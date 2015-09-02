@@ -8,7 +8,6 @@ App.Views.GrumbleCreate = Backbone.View.extend({
   },
 
   initialize: function(){
-
     this.template = Handlebars.compile($("#grumbleFormTemplate").html());
 
     this.$(".formContainer").html(this.template({}));
@@ -16,9 +15,9 @@ App.Views.GrumbleCreate = Backbone.View.extend({
   },
 
   toggleForm: function(){
-    this.toggleButton(this.$(".new").text());
-    this.toggleUrlState(this.$(".new").text());
     event.preventDefault();
+
+    this.toggleButton(this.$(".new").text());
     this.$(".formContainer").slideToggle();
   },
 
@@ -27,14 +26,6 @@ App.Views.GrumbleCreate = Backbone.View.extend({
       this.$(".new").text("Hide Form")
     }else{
       this.$(".new").text("New Grumble")
-    }
-  },
-
-  toggleUrlState: function(state){
-    if(state === "New Grumble"){
-      App.Routers.grumblesRouter.navigate('')
-    } else{
-      App.Routers.grumblesRouter.navigate('grumbles/new')
     }
   },
 

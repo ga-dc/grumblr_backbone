@@ -8,6 +8,10 @@ App = {
 };
 
 $(document).ready(function() {
-  App.Routers.grumblesRouter = new App.Routers.Grumbles();
-  Backbone.history.start();
+  App.Collections.grumbles = new App.Collections.Grumbles();
+
+  App.Views.listView = new App.Views.GrumbleList({collection: App.Collections.grumbles});
+  App.Views.grumbleCreateView = new App.Views.GrumbleCreate({collection: App.Collections.grumbles});
+
+  App.Collections.grumbles.fetch()
 });

@@ -24,3 +24,9 @@ textarea {
   padding: 1em;
   margin: 1em;
 }
+
+.grumble img {
+  display: block;
+  width: 400px;
+  margin: 10px;
+}
