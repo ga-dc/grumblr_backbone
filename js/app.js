@@ -1,8 +1,13 @@
+App = {
+  Models: {},
+  Views: {},
+  Collections: {},
+  Routers: {}
+};
+
 $(document).ready(function() {
-  grumbles = new GrumblesCollection();
-  grumbles.fetch({reset: true});
-
-  listView = new GrumbleListView({collection: grumbles});
-  grumbleCreateView = new GrumbleCreateView({collection: grumbles})
-
+	var grumbles = new App.Collections.Grumbles();
+	var grumbleCreate = new App.Views.GrumbleCreate( {collection: grumbles} );
+	var grumblesList = new App.Views.GrumblesList({ collection: grumbles });
+	grumbles.fetch();
 });
