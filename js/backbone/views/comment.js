@@ -12,7 +12,7 @@ App.Views.Comment = Backbone.View.extend({
     this.listenTo(this.model, 'change', this.render); // We want our model to be listened to, and if it changes, render the new view
     this.template = Handlebars.compile($("#commentTemplate").html()); // Set comment template
 
-    this.editCommentTemplate = Handlebars.compile($('#createCommentTemplate').html());
+    this.editCommentTemplate = Handlebars.compile($('#editCommentTemplate').html());
 
     this.render();
   },
