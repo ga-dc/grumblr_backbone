@@ -9,6 +9,7 @@
   <script src="js/backbone/models/grumble.js"></script>
   <script src="js/backbone/collections/comments.js"></script>
   <script src="js/backbone/collections/grumbles.js"></script>
+<script src="js/backbone/views/comment.js"></script>
   <script src="js/backbone/views/grumble.js"></script>
   <script src="js/backbone/views/grumbleList.js"></script>
   <script src="js/backbone/views/grumbleCreate.js"></script>
@@ -40,6 +41,7 @@
       <input type="text" name="content">
       <button>Submit</button>
     </form>
+    <div class="comments"></div>
   </script>
 
   <script id="grumbleFormTemplate" type="text/x-handlebars-template">
@@ -53,6 +55,10 @@
       <button class="cancel">Cancel</button>
     </form>
   </script>
-
+  <script id="commentTemplate" type="text/x-handlebars-template">
+        <span>by: {{ authorName }}</span>
+        <div>{{ content }}</div>
+        <button class="deleteComment">Delete</button>
+    </script>
 </body>
 </html>
