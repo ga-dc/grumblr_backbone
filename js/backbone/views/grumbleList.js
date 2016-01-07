@@ -20,8 +20,6 @@ App.Views.GrumbleList = Backbone.View.extend({
 
   findView: function(idArray){
     var views = []
-    console.log(idArray)
-    console.log(this.views)
     for(var j=0;j<idArray.length;j++){
       for(var i=0;i<this.views.length;i++){
         if (this.views[i].model.get("id") == idArray[j]) {
@@ -29,7 +27,6 @@ App.Views.GrumbleList = Backbone.View.extend({
         }
       }
     }
-    console.log(views)
     return views
   }
 });
